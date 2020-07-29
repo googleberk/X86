@@ -1,5 +1,3 @@
-
-
 def decimalToHex():
     print("Enter an int number in base 10: ")
     x = int(input())
@@ -15,53 +13,13 @@ def decimalToHex():
     l.append(x)
     l.reverse()
     for i in range(len(l)):
-        total += deciToHexDict[l[i]]
+        total += hexToDeciDict[l[i]]
 
     print("decimal numebr {} in hex is: {}. ".format(xDu, total))
     return total
 
+hexToDeciDict = "0123456789ABCDEF"
 
-
-
-deciToHexDict = {}
-deciToHexDict[0] = "0"
-deciToHexDict[1] = "1"
-deciToHexDict[2] = "2"
-deciToHexDict[3] = "3"
-deciToHexDict[4] = "4"
-deciToHexDict[5] = "5"
-deciToHexDict[6] = "6"
-deciToHexDict[7] = "7"
-deciToHexDict[8] = "8"
-deciToHexDict[9] = "9"
-deciToHexDict[10] = "A"
-deciToHexDict[11] = "B"
-deciToHexDict[12] = "C"
-deciToHexDict[13] = "D"
-deciToHexDict[14] = "E"
-deciToHexDict[15] = "F"
-
-
-
-
-
-hexToDeciDict = {}
-hexToDeciDict["0"] = 0
-hexToDeciDict["1"] = 1
-hexToDeciDict["2"] = 2
-hexToDeciDict["3"] = 3
-hexToDeciDict["4"] = 4
-hexToDeciDict["5"] = 5
-hexToDeciDict["6"] = 6
-hexToDeciDict["7"] = 7
-hexToDeciDict["8"] = 8
-hexToDeciDict["9"] = 9
-hexToDeciDict["A"] = 10
-hexToDeciDict["B"] = 11
-hexToDeciDict["C"] = 12
-hexToDeciDict["D"] = 13
-hexToDeciDict["E"] = 14
-hexToDeciDict["F"] = 15
 
 
 def HexToDecimal():
@@ -79,7 +37,7 @@ def HexToDecimal():
 
 
     while k < len(l):
-        total += hexToDeciDict[l[k]] * 16 ** (len(l) - k - 1)
+        total += hexToDeciDict.index(l[k]) * 16 ** (len(l) - k - 1)
         k += 1
 
     print("hex num {} in decimal is {}. ".format(xDu, total))
@@ -111,6 +69,3 @@ if __name__ == "__main__":
             print("=========================================================================")
             print("Thanks for using our service!")
             break;
-
-
-
